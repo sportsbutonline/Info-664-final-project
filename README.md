@@ -19,6 +19,7 @@ To complete this project I used components of an API request like root, path, an
 I then used .json() to parse response objects. 
 Once I had a list of objectids, I then looped through the amount of matching objectids to the search (when searching sustainability it was 288). This allowed me to iterate through the objectids, slice through and create a subset of just the 288 objectids from the query result, construct a URL string, parse through the response with .json() to format into a python dictionary, and add the parsed dictionary to the first_results list: 
 
+'''
 { 
 first_results = []
 for item in objectids[:288]:
@@ -27,7 +28,7 @@ for item in objectids[:288]:
     parsed = response.json()
     first_results.append(parsed)
 }
-
+'''
 Once that was complete I was able to call for an objectid result to see the fields included in the collection information which helped inform the use of the **pandas library** in creating a new dataset: 
 
 
