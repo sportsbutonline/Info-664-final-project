@@ -19,20 +19,19 @@ To complete this project I used components of an API request like root, path, an
 I then used .json() to parse response objects. 
 Once I had a list of objectids, I then looped through the amount of matching objectids to the search (when searching sustainability it was 288). This allowed me to iterate through the objectids, slice through and create a subset of just the 288 objectids from the query result, construct a URL string, parse through the response with .json() to format into a python dictionary, and add the parsed dictionary to the first_results list: 
 
-'''
-{ 
+####
+```
 first_results = []
 for item in objectids[:288]:
     url = f'https://collectionapi.metmuseum.org/public/collection/v1/objects/{item}'
     response = requests.get(url)
     parsed = response.json()
     first_results.append(parsed)
-}
-'''
+```
 Once that was complete I was able to call for an objectid result to see the fields included in the collection information which helped inform the use of the **pandas library** in creating a new dataset: 
 
 
-{ 
+```
 import pandas as pd 
 titles = []
 names = []
@@ -60,7 +59,7 @@ for item in first_results:
     tags.append(tag)
     objectwikidataurl = item.get('objectWikidata_URL')
     objectwikidataurls.append(objectwikidataurl)
-}
+```
 
 I then saved the results of the dataset as a csv. 
 
@@ -72,9 +71,8 @@ Once the new dataset was imported I used **pandas** and **matplotlib** libraries
 
 I plotted the mediums that were mentioned in at least 10 objects into a bar and a pie chart, here is the bar chart code:  
 
-{
-df.value_counts('medium').nlargest(10).plot(kind='barh', xlabel='Frequency of Medium', title='Vases with Trees') 
-}
+`df.value_counts('medium').nlargest(10).plot(kind='barh', xlabel='Frequency of Medium', title='Vases with Trees')` 
+
 
 The results showed that Terrecotta and Hard-paste porcelein were the most frequently used materials for vases depicting nature icons in The MET collection. 
 
