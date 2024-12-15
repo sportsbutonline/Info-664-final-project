@@ -12,15 +12,18 @@ I decided to explore this topic because it was broad enough to get started with 
 To complete this project I used components of an API request like root, path, and endpoint, and inspected the results using type() and dir() functions to understand the type of objects in the results of my request. 
 
 ### ex:
-- root = 'https://collectionapi.metmuseum.org'
-- path = '/public/collection/v1/search'
-- parameter ='?medium=Vases&q=tree'
+
+```Ruby
+root = 'https://collectionapi.metmuseum.org'
+path = '/public/collection/v1/search'
+parameter ='?medium=Vases&q=tree'
+```
 
 I then used .json() to parse response objects. 
 Once I had a list of objectids, I then looped through the amount of matching objectids to the search (when searching sustainability it was 288). This allowed me to iterate through the objectids, slice through and create a subset of just the 288 objectids from the query result, construct a URL string, parse through the response with .json() to format into a python dictionary, and add the parsed dictionary to the first_results list: 
 
 ####
-```
+```Ruby
 first_results = []
 for item in objectids[:288]:
     url = f'https://collectionapi.metmuseum.org/public/collection/v1/objects/{item}'
@@ -31,7 +34,7 @@ for item in objectids[:288]:
 Once that was complete I was able to call for an objectid result to see the fields included in the collection information which helped inform the use of the **pandas library** in creating a new dataset: 
 
 
-```
+```Ruby
 import pandas as pd 
 titles = []
 names = []
