@@ -70,7 +70,7 @@ Once I had a csv table, I soon found out that when searching for "sustainability
 
 I then imported a new csv dataset containing very concrete matches of 207 Vases with trees on them or describing the object. Here is an example of one of the [results](https://www.metmuseum.org/art/collection/search/254190) This is the second item of the csv I've attached to the repository called "Met_vases_collection_info"
 
-Once the new dataset was imported I used **pandas** and **matplotlib** libraries to work with the dataset and visualize differnt columns into a pie chart showing differnt mediums within the vase collection. 
+Once the new dataset was imported I used **pandas** and **matplotlib** libraries to work with the dataset and visualize differnt columns into a pie chart showing different mediums within the vase collection. 
 
 I plotted the mediums that were mentioned in at least 10 objects into a bar and a pie chart, here is the bar chart code:  
 
@@ -80,7 +80,7 @@ I plotted the mediums that were mentioned in at least 10 objects into a bar and 
 The results showed that Terrecotta and Hard-paste porcelein were the most frequently used materials for vases depicting nature icons in The MET collection. 
 
 ## Futher Uses
-I hope that demonstrating how to query in the above sections and visualize the information could encourage other researches to explore the MET API and pull out collection information that interested them under a specific topic. This could help establish trends and even compare information to other museum collections with a public API that can be easily queryed such as the Getty or the Art Institute of Chicago. The code above and in the attached python notebook files can be transformed for different searches and different data sets using the **response** areas of the MET API. Then you could use pandas to customize the desired fields to put into a dataset for further investigation. The python notebook containing graphing information could also serve as an example if a researcher wants to graph under a differnt field such as time-span, frequency of objects being from a particular country, etc. 
+I hope that demonstrating how to query in the above sections and visualize the information could encourage other researches to explore the MET API and pull out collection information that interested them under a specific topic. This could help establish trends and even compare information to other museum collections with a public API that can be easily queryed such as the Getty or the Art Institute of Chicago. The code above and in the attached python notebook files can be transformed for different searches and different data sets using the **response** areas of the MET API. Then you could use pandas to customize the desired fields to put into a dataset for further investigation. The python notebook containing graphing information could also serve as an example if a researcher wants to graph under a different field such as time-span, frequency of objects being from a particular country, etc. 
 
 ## Files
 ### Python Notebooks:
